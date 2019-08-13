@@ -1,0 +1,19 @@
+<div class="container">
+	<div class="row">
+
+<%= form_for(@task) do |f| %>
+
+<div class="form-group ">
+  <%= label_tag :checkbox, "" %>
+  <%= check_box_tag("title", "value", false, class: "checkbox") %>
+  <%= f.label :title %>
+  <%= f.text_field :title, class: 'form-control' %>
+</div>
+<div class="form-group align-self-center">
+  <%= f.label :details %>
+  <%= f.text_field :details, class: 'form-control' %>
+</div>
+<%= f.submit class: 'btn btn-primary align-self-center' %>
+</div>
+</div>
+<% end %>

@@ -1,0 +1,20 @@
+<h1>Edit task</h1>
+
+
+<%= form_for(@task) do |f| %>
+
+<div class="form-group ">
+  <%= label_tag :checkbox, "" %>
+  <%= check_box_tag("title", "value", false, class: "checkbox") %>
+  <%= f.label :title %>
+  <%= f.text_field :title, class: 'form-control' %>
+</div>
+<div class="form-group align-self-center">
+  <%= f.label :details %>
+  <%= f.text_field :details, class: 'form-control' %>
+</div>
+<%= f.submit class: 'btn btn-primary align-self-center' %>
+
+<% end %>
+
+<%= link_to "Destroy #{@task.title}", tasks_path(@task), method: :delete, data: { confirm: "Are you sure?"} %>
